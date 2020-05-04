@@ -1,0 +1,28 @@
+name: Chef Supermarket Action
+description: Share cookbooks on the public supermarket
+author: Álvaro Faúndez
+inputs:
+  cookbook:
+    description: The name of the cookbook. If not provided, it will be infered from the repository's name.
+    required: false
+  category: The supermarket category for your cookbook.
+    description:
+    required: false
+    default: Other
+  user:
+    description: The supermaket user owner of the cookbook. if not provided, we will use the github user/organization's name.
+    required: false
+  key:
+    description: Your private key for the supermarket. Use a secret for this!
+    required: true
+outputs:
+  time:
+    description: The time we greeted you
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    COOKBOOK: ${{ inputs.cookbook }}
+    CATEGORY: ${{ inputs.category }}
+    USER: ${{ inputs.user }}
+    KEY: ${{ inputs.key }}

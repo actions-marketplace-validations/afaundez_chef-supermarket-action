@@ -18,4 +18,4 @@ fi;
 
 cd ${GITHUB_WORKSPACE};
 
-knife --user=${USER} --key=${USER_KEY}.pem supermarket share ${COOKBOOK} ${CATEGORY};
+knife supermarket share ${COOKBOOK} ${CATEGORY} --user=${USER} --key=${USER_KEY}.pem;

@@ -12,9 +12,6 @@ inputs:
   user:
     description: The supermaket user owner of the cookbook. if not provided, we will use the github user/organization's name.
     required: false
-  key:
-    description: Your private key for the supermarket. Use a secret for this!
-    required: true
 outputs:
   time:
     description: The time we greeted you
@@ -25,4 +22,3 @@ runs:
     COOKBOOK: ${{ inputs.cookbook }}
     CATEGORY: ${{ inputs.category }}
     USER: ${{ inputs.user }}
-    KEY: ${{ inputs.key }}

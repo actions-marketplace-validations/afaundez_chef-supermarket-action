@@ -7,11 +7,6 @@ if [ -z "${USER}" ]; then
   echo "Patching USER with ${USER}.";
 fi;
 
-USER_KEY="/tmp/${USER}.pem";
-echo ${KEY} > ${USER_KEY};
-head -n1 ${USER_KEY};
-chmod 600 ${USER_KEY};
-
 GITHUB_PROJECT=$(echo "${GITHUB_REPOSITORY}" | cut -f2 -d/);
 echo "GITHUB_PROJECT: ${GITHUB_PROJECT}";
 if [ -z "${COOKBOOK}" ]; then
@@ -20,12 +15,15 @@ if [ -z "${COOKBOOK}" ]; then
 fi;
 
 echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}";
-ls -larth ${GITHUB_WORKSPACE};
 COOKBOOK_PATH=$(dirname "${GITHUB_WORKSPACE}");
 echo "COOKBOOK_PATH: ${COOKBOOK_PATH}";
 
 echo "Sharing '${COOKBOOK}' with user '${USER}'";
 cd ${GITHUB_WORKSPACE};
+
+USER_KEY="/tmp/${USER}.pem";
+echo ${SUPERMARKET_API_KEY} > ${USER_KEY};
+chmod 600 ${USER_KEY};
 
 CONFIG_PATH="/tmp/config.rb";
 touch ${CONFIG_PATH};

@@ -9,6 +9,7 @@ fi;
 
 USER_KEY="/tmp/${USER}.pem";
 echo ${KEY} > ${USER_KEY};
+chmod 600 ${USER_KEY};
 
 GITHUB_PROJECT=$(echo "${GITHUB_REPOSITORY}" | cut -f2 -d/);
 echo "GITHUB_PROJECT: ${GITHUB_PROJECT}";

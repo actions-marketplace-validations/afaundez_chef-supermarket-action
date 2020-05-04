@@ -1,14 +1,14 @@
 #!/bin/sh -l
 
-USER_KEY="/tmp/${USER}.pem";
-echo ${KEY} > ${USER_KEY};
-
 GITHUB_OWNER=$(echo "${GITHUB_REPOSITORY}" | cut -f1 -d/);
 echo "GITHUB_OWNER: ${GITHUB_OWNER}";
 if [ -z "${USER}" ]; then
   USER="${GITHUB_OWNER}";
   echo "Patching USER with ${USER}.";
 fi;
+
+USER_KEY="/tmp/${USER}.pem";
+echo ${KEY} > ${USER_KEY};
 
 GITHUB_PROJECT=$(echo "${GITHUB_REPOSITORY}" | cut -f2 -d/);
 echo "GITHUB_PROJECT: ${GITHUB_PROJECT}";

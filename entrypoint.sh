@@ -13,7 +13,7 @@ fi;
 GITHUB_PROJECT=$(echo "${GITHUB_REPOSITORY}" | cut -f2 -d/);
 echo "GITHUB_PROJECT: ${GITHUB_PROJECT}";
 if [ -z "${COOKBOOK}" ]; then
-  COOKBOOK=$(echo "${GITHUB_PROJECT}" | sed -e "s/-cookbook$//");
+  COOKBOOK=$(echo "${GITHUB_PROJECT}" | sed -e "s/-cookbook$//" | sed -e "s/-/_/");
   echo "Patching COOKBOOK with ${COOKBOOK}.";
 fi;
 

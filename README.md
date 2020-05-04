@@ -18,7 +18,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@master
       - name: Run Chef Supermarket Share
-        uses: afaundez/chef-supermarket@master
+        uses: afaundez/chef-supermarket-action@master
         with:
           cookbook: <the cookbook name>
           category: <the category>

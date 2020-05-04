@@ -21,9 +21,11 @@ echo "COOKBOOK_PATH: ${COOKBOOK_PATH}";
 echo "Sharing '${COOKBOOK}' with user '${USER}'";
 cd ${GITHUB_WORKSPACE};
 
+set +x;
 USER_KEY="/tmp/${USER}.pem";
 echo ${SUPERMARKET_API_KEY} > ${USER_KEY};
 chmod 600 ${USER_KEY};
+set -x;
 
 CONFIG_PATH="/tmp/config.rb";
 touch ${CONFIG_PATH};

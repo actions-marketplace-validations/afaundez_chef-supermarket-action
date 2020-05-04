@@ -15,7 +15,7 @@ if [ -z "${USER}" ]; then
 fi;
 
 if [ -z "${COOKBOOK}" ]; then
-    COOKBOOK=$(echo "${GITHUB_PROJECT}" | sed -e "s/-cookbook$//");
+    COOKBOOK="${GITHUB_PROJECT}";
     echo "Patching COOKBOOK with ${COOKBOOK}.";
 fi;
 

@@ -16,4 +16,6 @@ if [ -z '${COOKBOOK}' ]; then
     echo 'Patching cookbook with ${COOKBOOK}.';
 fi;
 
+cd ${GITHUB_WORKSPACE};
+
 knife --user=${USER} --key=${USER_KEY}.pem supermarket share ${COOKBOOK} ${CATEGORY};

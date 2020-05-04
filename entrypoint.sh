@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-USER_KEY='tmp/${USER}.pem';
+USER_KEY='/tmp/${USER}.pem';
 cat ${KEY} > ${USER_KEY};
 
 GITHUB_OWNER=$(echo ${GITHUB_REPOSITORY} | cut -f1 -d/);

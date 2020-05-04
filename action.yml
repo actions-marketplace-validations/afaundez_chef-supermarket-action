@@ -1,6 +1,9 @@
 name: Chef Supermarket Action
 description: Share cookbooks on the public supermarket
 author: Álvaro Faúndez
+branding:
+  icon: share
+  color: red
 inputs:
   cookbook:
     description: The name of the cookbook. If not provided, it will be infered from the repository's name.

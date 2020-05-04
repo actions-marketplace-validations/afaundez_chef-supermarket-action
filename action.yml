@@ -5,8 +5,8 @@ inputs:
   cookbook:
     description: The name of the cookbook. If not provided, it will be infered from the repository's name.
     required: false
-  category: The supermarket category for your cookbook.
-    description:
+  category:
+    description: The supermarket category for your cookbook.
     required: false
     default: Other
   user:

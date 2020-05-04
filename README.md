@@ -5,13 +5,13 @@ Shares cookbook on the public supermarket.
 ## Workflow example
 
 ```yaml
-name: delivery
+name: chef supermaket
 on:
   release:
     types: [published]
 
 jobs:
-  delivery:
+  share:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +23,5 @@ jobs:
           cookbook: <the cookbook name>
           category: <the category>
           user: <the supermarket username>
-          user: ${{ secrets.supermarketKey }}
+          key: ${{ secrets.supermarketKey }}
 ```

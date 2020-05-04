@@ -22,6 +22,6 @@ fi;
 COOKBOOK_PATH=$(dirname "${GITHUB_WORKSPACE}");
 echo "COOKBOOK_PATH: ${COOKBOOK_PATH}";
 
-cd "Sharing '${COOKBOOK}' with user '${USER}'";
+echo "Sharing '${COOKBOOK}' with user '${USER}'";
 cd ${GITHUB_WORKSPACE};
 knife supermarket share "${COOKBOOK}" "${CATEGORY}" --user="${USER} "--key="${USER_KEY}.pem" --cookbook-path="${COOKBOOK_PATH}";
